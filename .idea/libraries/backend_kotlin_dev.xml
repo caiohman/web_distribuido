@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="backend-kotlin-dev">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/backend-kotlin/target/backend-kotlin-dev.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
