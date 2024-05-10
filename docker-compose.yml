@@ -14,3 +14,11 @@ services:
 
     ports:
       - "5432:5432"
+
+  backend:
+    build:
+      context: ./backend-kotlin/
+      dockerfile: src/main/docker/Dockerfile.jvm
+
+    ports:
+      - "8080:8080"
