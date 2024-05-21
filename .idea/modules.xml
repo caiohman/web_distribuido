@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/backend-kotlin/backend-kotlin.iml" filepath="$PROJECT_DIR$/backend-kotlin/backend-kotlin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/frontend-vue/frontend-vue.iml" filepath="$PROJECT_DIR$/frontend-vue/frontend-vue.iml" />
       <module fileurl="file://$PROJECT_DIR$/web_distribuido.iml" filepath="$PROJECT_DIR$/web_distribuido.iml" />
     </modules>
   </component>
