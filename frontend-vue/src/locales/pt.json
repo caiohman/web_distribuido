@@ -1,0 +1,11 @@
+{
+  "login": {
+    "register": "Cadastro",
+    "login": "Entrar",
+    "username": "Usuário",
+    "password": "Senha"
+   },
+  "navbar": {
+    "country": "Brasil"
+  }  
+}

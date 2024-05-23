@@ -1,0 +1,14 @@
+{
+  "login": {
+    "register": "Register",
+    "login": "Login",
+    "username": "Username",
+    "password": "Password"
+  },
+  "navbar": {
+    "country": "USA"
+  }
+}
+
+
+

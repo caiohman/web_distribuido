@@ -6,40 +6,42 @@
           <img alt="company name" :src="cardImage" class="logo"  />
         </div>
       </template>
-      <template #title>Login</template>
+      <template #title>{{ t("login.login") }}</template>
       <template #content >
         <br />
         <FloatLabel>
           <InputText id="username" v-model="value" />
-          <label for="username">Username</label>
+          <label for="username">{{ t("login.username") }}</label>
         </FloatLabel> 
         <br/>
         <br/>
         <FloatLabel>
           <Password v-model="value" inputId="password" :feedback="false"/>
-          <label for="password">Password</label>
+          <label for="password">{{ t("login.password") }}</label>
         </FloatLabel>
       </template>
       <template #footer>
           <div class="footer-itens-position">
-            <Button label="Login" severity="secondary" outlined class="w-full" />
-            <Button label="Cadastro" class="w-full" />
+            <Button severity="secondary" outlined class="w-full" > {{ t("login.login") }} </Button>
+            <Button class="w-full" > {{ t("login.register") }} </Button>
           </div>
       </template>
     </Card>
+    <!-- <div>
+      {{ registerLabel }}
+    </div> -->
   </div>
-  
 </template>
   
 <script>
-  import  {onMounted, reactive}  from 'vue'
   import Button from 'primevue/button';
   import Card from 'primevue/card';
   import InputText from 'primevue/inputtext';
   import FloatLabel from 'primevue/floatlabel';
   import logo from '@/assets/logo-site.png';
   import Password from 'primevue/password';
-  
+  import { useI18n } from 'vue-i18n';
+
   export default {
     name: 'LoginScreen',
     components: {
@@ -51,28 +53,19 @@
     },
   
     setup() {
-      const state = reactive({
-        test: null,
-      });
       
+      const { t } = useI18n(); 
       
-  
-      onMounted(async () => {
-        await fetch("http://localhost:8090/users")
-         .then(response => response.json())
-         .then(json => state.test = json)
-         .catch(error => console.log(error))
-      });
-  
-  
+
       return {
-        state,
+        t
       };
     },
 
     data() {
         return {
-          cardImage : logo
+          cardImage : logo,
+          //registerLabel: this.$t("login.register")
         }
     }
     
