@@ -10,19 +10,19 @@
       <template #content >
         <br />
         <FloatLabel>
-          <InputText id="username" v-model="value" />
+          <InputText id="username" v-model="usernameValue" />
           <label for="username">{{ t("login.username") }}</label>
         </FloatLabel> 
         <br/>
         <br/>
         <FloatLabel>
-          <Password v-model="value" inputId="password" :feedback="false"/>
+          <Password v-model="passwordValue" inputId="password" :feedback="false"/>
           <label for="password">{{ t("login.password") }}</label>
         </FloatLabel>
       </template>
       <template #footer>
           <div class="footer-itens-position">
-            <Button severity="secondary" outlined class="w-full" > {{ t("login.login") }} </Button>
+            <Button severity="secondary" outlined class="w-full" @click="validaterUserBackend" > {{ t("login.login") }} </Button>
             <Button class="w-full" > {{ t("login.register") }} </Button>
           </div>
       </template>
@@ -41,6 +41,7 @@
   import logo from '@/assets/logo-site.png';
   import Password from 'primevue/password';
   import { useI18n } from 'vue-i18n';
+  import { ref } from 'vue';
 
   export default {
     name: 'LoginScreen',
@@ -55,10 +56,12 @@
     setup() {
       
       const { t } = useI18n(); 
-      
+
+      const usernameValue = ref();
+      const  passwordValue  = ref();
 
       return {
-        t
+        t, usernameValue, passwordValue
       };
     },
 
@@ -67,6 +70,17 @@
           cardImage : logo,
           //registerLabel: this.$t("login.register")
         }
+    },
+
+    methods: {
+      validaterUserBackend() {
+      //   await fetch("http://localhost:8090/users")
+      //  .then(response => response.json())
+      //  .then(json => state.test = json)
+      //  .catch(error => console.log(error))    
+      console.log(this.usernameValue, this.passwordValue)
+      }
+        
     }
     
   }

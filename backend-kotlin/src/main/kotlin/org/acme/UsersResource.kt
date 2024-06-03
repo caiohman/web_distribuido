@@ -27,6 +27,13 @@ class UsersResource {
         return Users.listAll(Sort.by("name"))
     }
 
+    //cuz is more secure than get for sensitive information
+    @POST
+    @Path("/username={username}&password={password}")
+    fun validateUser(username : String, password : String): Users {
+        Users.find("username", username).firstResult()
+    }
+
     @Provider
     class ErrorMapper : ExceptionMapper<Exception> {
         @Inject
