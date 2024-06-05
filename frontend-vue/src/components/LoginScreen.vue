@@ -73,15 +73,18 @@
     },
 
     methods: {
-      validaterUserBackend() {
-      //   await fetch("http://localhost:8090/users")
-      //  .then(response => response.json())
-      //  .then(json => state.test = json)
-      //  .catch(error => console.log(error))    
-      console.log(this.usernameValue, this.passwordValue)
-      }
-        
-    }
+          async validaterUserBackend() {
+            await fetch("http://localhost:8090/user", {
+              method: "POST",
+              headers: {"Content-Type": "application/json",},
+              body: JSON.stringify({ username:this.usernameValue, password:this.passwordValue}),
+            })
+           .then(response => response.json())
+           .then(json => console.log(json))
+           .catch(error => console.log(error))
+          }
+
+        }
     
   }
 </script>
